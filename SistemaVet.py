@@ -6,7 +6,7 @@ class Mascota:
         self.__tipo=" "
         self.__peso=" "
         self.__fecha_ingreso=" "
-        self.__medicamento=""
+        self.__lista_medicamentos= []
 
     def verNombre(self):
         return self.__nombre
@@ -18,8 +18,8 @@ class Mascota:
         return self.__peso
     def verFecha(self):
         return self.__fecha_ingreso
-    def ver_Medicamento(self):
-        return self.__medicamento 
+    def ver_Lista_Medicamentos(self):
+        return self.__lista_medicamentos
             
     def asignarNombre(self,n):
         self.__nombre=n
@@ -31,8 +31,8 @@ class Mascota:
         self.__peso=p
     def asignarFecha(self,f):
         self.__fecha_ingreso=f
-    def asignarMedicamento(self,n):
-        self.__medicamento = n 
+    def asignarLista_Medicamentos(self,n):
+        self.__lista_medicamentos = n 
 
 
 class sistemaV:
@@ -71,22 +71,29 @@ class sistemaV:
                 return masc.verFecha() 
         return None
 
-    def verMedicamento(self,historia):
+    def verMedicamentoCaninos(self,historia):
         #busco la mascota    y devuelvo el atributo solicitado
-        for masc in self.__lista_mascotas:
+        if historia in self.__lista_caninos:
+            if historia == masc.verHistoria():
+                return masc.ver_Medicamento() 
+        return None
+    
+    def verMedicamentoFelinos(self,historia):
+        #busco la mascota    y devuelvo el atributo solicitado
+        if historia in self.__lista_felinos:
             if historia == masc.verHistoria():
                 return masc.ver_Medicamento() 
         return None
 
     def eliminarCaninos(self, historia):
-        if masc in self.__lista_caninos:
-            del self.__lista_caninos(masc)  #opcion con el pop
+        if historia in self.__lista_caninos:
+            del self.__lista_caninos[historia]  #opcion con el pop
             return True  #eliminado con exito
         return False 
     
     def eliminarFelinos(self, historia):
-        if masc in self.__lista_caninos:
-            del self.__lista_felinos(masc)  #opcion con el pop
+        if historia in self.__lista_caninos:
+            del self.__lista_felinos[historia]  #opcion con el pop
             return True  #eliminado con exito
         return False 
 

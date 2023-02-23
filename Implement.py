@@ -46,9 +46,17 @@ def main():
                     nombre=input("Ingrese el nombre de la mascota: ")
                     peso=int(input("Ingrese el peso de la mascota: "))
                     fecha=input("Ingrese la fecha de ingreso (dia/mes/año): ")
-                    medicamento=Medicamento()
-                    medicamento.asignarNombre(input("Ingrese nombre del medicamento: "))
-                    medicamento.asignarDosis(int(input("Ingrese dosis del medicamento: ")))
+
+                    nm = int(input("Ingrese la cantidad de mrdicamento: "))
+                    lista_med=[]
+
+                    for i in range(0,nm):
+                        medicamento=Medicamento()
+
+                        
+                        medicamento.asignarNombre(input("Ingrese nombre del medicamento: "))
+                        medicamento.asignarDosis(int(input("Ingrese dosis del medicamento: ")))
+                        servicio_hospitalario.li
                     mas = Mascota()
                     mas.asignarNombre(nombre)
                     mas.asignarHistoria(historia)
@@ -57,6 +65,7 @@ def main():
                     mas.asignarFecha(fecha)
                     mas.asignarMedicamento(medicamento)
                     servicio_hospitalario.ingresarCaninos(mas)
+
     
 
                 else:
@@ -85,12 +94,21 @@ def main():
                 print("La historia clínica ingresada no corresponde con ninguna mascota en el sistema.")
 
         elif menu == 5: # Eliminar mascota
-            q = int(input("Ingrese la historia clínica de la mascota: "))
-            resultado_operacion = servicio_hospitalario.eliminarMascota(q) 
-            if resultado_operacion == True:
-                print("Mascota eliminada del sistema con exito")
-            else:
-                print("No se ha podido eliminar la mascota")
+            tipo=int(input("Ingrese el tipo de mascota (1.felino o 2.canino): "))
+            if tipo == 1:
+                q = int(input("Ingrese la historia clínica de la mascota: "))
+                resultado_operacion = servicio_hospitalario.eliminarFelinos(q) 
+                if resultado_operacion == True:
+                    print("Mascota eliminada del sistema con exito")
+                else:
+                    print("No se ha podido eliminar la mascota")
+            elif tipo == 2:
+                q = int(input("Ingrese la historia clínica de la mascota: "))
+                resultado_operacion = servicio_hospitalario.eliminarCaninos(q) 
+                if resultado_operacion == True:
+                    print("Mascota eliminada del sistema con exito")
+                else:
+                    print("No se ha podido eliminar la mascota")
 
         elif menu==6:
             print("Usted ha salido del sistema de servicio de hospitalización...")
