@@ -72,7 +72,7 @@ class sistemaV:
         return None
 
     def verMedicamento(self,historia):
-        #busco la mascota y devuelvo el atributo solicitado
+        #busco la mascota    y devuelvo el atributo solicitado
         for masc in self.__lista_mascotas:
             if historia == masc.verHistoria():
                 return masc.ver_Medicamento() 

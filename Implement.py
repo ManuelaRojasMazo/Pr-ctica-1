@@ -69,7 +69,7 @@ def main():
             if fecha != None:  
                 print("La fecha de ingreso de la mascota es: " + fecha)
             else:
-                print("La historia clínica ingresada no corresponde con ninguna mascota en el sistema.")
+                print("La historia  clínica ingresada no corresponde con ninguna mascota en el sistema.")
           
         elif menu==3: # Ver número de mascotas en el servicio 
             numero1=servicio_hospitalario.verNumeroCaninos()
