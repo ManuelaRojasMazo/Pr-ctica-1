@@ -34,7 +34,6 @@ def main():
                     mas.asignarFecha(fecha)
                     mas.asignarMedicamento(medicamento)
                     servicio_hospitalario.ingresarFelinos(mas)
-    
 
                 else:
                     print("Ya existe una mascota con el numero de historia clínica ingresado.") 
@@ -73,8 +72,9 @@ def main():
                 print("La historia clínica ingresada no corresponde con ninguna mascota en el sistema.")
           
         elif menu==3: # Ver número de mascotas en el servicio 
-            numero=servicio_hospitalario.verNumeroMascotas()
-            print("El número de pacientes en el sistema es: " + str(numero))
+            numero1=servicio_hospitalario.verNumeroCaninos()
+            numero2=servicio_hospitalario.verNumeroFelinos()
+            print("El número de pacientes en el sistema es: " + str(numero1+numero2))
 
         elif menu==4:
             q = int(input("Ingrese la historia clínica de la mascota: "))

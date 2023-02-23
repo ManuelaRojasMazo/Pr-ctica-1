@@ -80,18 +80,14 @@ class sistemaV:
 
     def eliminarCaninos(self, historia):
         if masc in self.__lista_caninos:
-            if historia == masc.verHistoria():
-                # del self.__lista_mascotas[masc]
-                self.__lista_mascotas.remove(masc)  #opcion con el pop
-                return True  #eliminado con exito
+            del self.__lista_caninos(masc)  #opcion con el pop
+            return True  #eliminado con exito
         return False 
     
     def eliminarFelinos(self, historia):
-        if masc in self.__lista_mascotas:
-            if historia == masc.verHistoria():
-                # del self.__lista_mascotas[masc]
-                self.__lista_mascotas.remove(masc)  #opcion con el pop
-                return True  #eliminado con exito
+        if masc in self.__lista_caninos:
+            del self.__lista_felinos(masc)  #opcion con el pop
+            return True  #eliminado con exito
         return False 
 
 
